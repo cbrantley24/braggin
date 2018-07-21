@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+    <head>
+        <!-- Meta Data -->
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <link rel="shortcut icon" type="image/png" href="img/favicon-16x16.png">
+        <title>Braggin</title>
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.min.css" type="text/css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <!-- <link rel="stylesheet" href="./asset/css/app.css" type="text/css"> -->
+        <!-- Initialize jQuery -->
+        <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
+        <script type='text/javascript' src='//code.jquery.com/ui/1.11.3/jquery-ui.min.js'></script>
+        <!-- Intialize AngularJS -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular-route.min.js"></script>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  		<%= csrf_meta_tags %>
+        <base href="/">
+    </head>
+    <body ng-controller="mainCtrl">
+    	<header <% if request.path == "/" %> style="background-color:transparent;" id="homepage-header" <% end %>>
+    		<section class="heading">
+    			<%= link_to 'Braggin', "/", :class => "title" %> <span>Los Angeles <i class="fa fa-angle-down fa-lg"></i></li></span>
+    			<ul class="nav" <% if request.path != "/" %> style="margin-top:15px;" <% end %>>
+    				<% if request.path == "/" %>
+    				<%= link_to("/profile/new/", :class => "profileLink") do %><li>Create Your Profile</li><% end %>
+    				<% end %>
+    				<%= link_to("/learn/") do %><li>Learn</li><% end %>
+    				<%= link_to("/login/") do %><li>Members</li><% end %>
+    				<%= link_to("/spots/los-angeles/") do %><li>Spots <i class="fa fa-angle-down fa-lg"></i></li><% end %>
+    			</ul>
+    		</section>
+    	</header>
+    	<% if request.path != "/" %> <div class="clear"></div> <% end %>
+		<%= yield %>
+		<% if @footer != false %>
+		<footer>
+			<section class="row">
+				<div class="large-12 columns">
+					<%= link_to 'Braggin', "/", :class => "title" %>  <span>Los Angeles <i class="fa fa-angle-down fa-lg"></i></li></span>
+				</div>
+				<div class="large-6 columns">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean leo ipsum, pulvinar et rutrum et, viverra at lacus. Proin nisl nulla, bibendum sed risus vitae, tempor tincidunt magna.</p>
+					<p>&copy; Company Name, Inc.</p>
+				</div>
+				<div class="large-6 columns">
+					<div class="row">
+						<div class="large-6 columns">
+							<ul>
+								<%= link_to("#") do %><li>Find Spots</li><% end %>
+								<%= link_to("#") do %><li>How It Works</li><% end %>
+								<%= link_to("#") do %><li>Browse Skaters</li><% end %>
+								<%= link_to("#") do %><li>Blog</li><% end %>
+								<%= link_to("#") do %><li>Sponsorship</li><% end %>
+								<%= link_to("#") do %><li>Terms and Privacy</li><% end %>
+							</ul>
+						</div>
+						<div class="large-6 columns">
+							<ul>
+								<%= link_to("#") do %><li><i class="fa fa-envelope fa-fw"></i> support@braggin.com</li><% end %>
+								<%= link_to("#") do %><li><i class="fa fa-facebook-square fa-fw"></i> Facebook</li><% end %>
+								<%= link_to("#") do %><li><i class="fa fa-linkedin-square fa-fw"></i> LinkedIn</li><% end %>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+		</footer>
+		<% end %>
+		<!-- Foundation Scripts -->
+        <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/foundation/5.4.5/js/foundation.min.js'></script>
+        <!-- Additional Scripts -->
+        <script>
+        	'use strict';
+
+			var app = angular.module('app', ['ngRoute']);
+
+			/* Main Controller
+			======================= */
+			app.controller('mainCtrl', function($scope, $http, $timeout, $filter, $location, $window, $routeParams) {
+
+
+
+			});
+        </script>
+    </body>
+</html>

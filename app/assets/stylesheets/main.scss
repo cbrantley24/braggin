@@ -1,0 +1,486 @@
+// Place all the styles related to the main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Header
+======================= */
+
+header {
+	position: fixed;
+	width: 100%;
+	background-color: #383939;
+	padding: 7px 0 15px 0;
+	z-index: 20;
+	.title {
+		font-size: 2em;
+		font-weight: 900;
+		margin-left: 20px;
+		color: #fff;
+	}
+	span {
+		color: #efefef;
+		margin-left: 10px;
+		font-weight: 300;
+		i {
+			margin-left: 3px;
+		}
+	}
+	.nav {
+		display: inline-block;
+		list-style: none;
+		margin: 0;
+		margin-top: 12px;
+		margin-right: 20px;
+		float: right;
+		a {
+			display: inline-block;
+			color: #efefef;
+			font-weight: 300;
+			&.profileLink {
+				border: 2px solid #fff;
+				border-radius: 3px;
+				&:hover {
+					background-color: #fff;
+					color: #424242;
+				}
+			}
+			&:hover {
+				color: #dbdbdb;
+			}
+			&:not(:last-child) li {
+				margin: 0 20px;
+			}
+			&:last-child li {
+				margin-left: 20px;
+				i {
+					margin-left: 3px;
+				}
+			}
+		}
+	}
+}
+
+#homepage-header {
+	-webkit-transition: all 0.35s;
+	transition: all 0.35s;
+}
+
+.clear {
+	padding-top: 60px;
+}
+
+/* Typography & Buttons, Colors
+======================= */
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,900);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700);
+
+$primary-font: 'Lato';
+$secondary-font: 'Roboto';
+
+h1, h2, h3, h4, h5, h6, .title {
+	font-family: $primary-font, sans-serif !important;
+}
+
+div, span, p, button, li {
+	font-family: $secondary-font, sans-serif !important;
+}
+
+button {
+	padding: 15px 30px !important;
+	border-radius: 3px !important;
+	font-weight: 700 !important;
+}
+
+a, button {
+	-webkit-transition: all 0.25s;
+	transition: all 0.25s;
+}
+
+/* Colors */
+$teal: #abd8c9;
+$green: #50ae7e;
+$red: #d06c58;
+$yellow: #e8c866;
+$purple: #433547;
+$grey: #b9b0a1;
+
+// Color button
+@mixin color_button($color) {
+	background-color: $color !important;
+	&:hover {
+		background-color: darken($color, 5%) !important;
+	}
+}
+
+// Color text
+@mixin color_text($color, $type) {
+	color: $color !important;
+	@if $type == "link" {
+		&:hover {
+			color: darken($color, 5%) !important;
+		}
+	}
+}
+
+// Color
+@mixin color($color) {
+	&.button {
+		@include color_button($color);
+	}
+	&.text {
+		@include color_text($color, text);
+	}
+	&.link {
+		@include color_text($color, link);
+	}
+}
+
+.teal {
+	@include color($teal);
+}
+
+.green {
+	@include color($green);
+}
+
+.red {
+	@include color($red);
+}
+
+.yellow {
+	@include color($yellow);
+}
+
+.purple {
+	@include color($purple);
+}
+
+.grey {
+	@include color($grey);
+}
+
+/* Icons
+======================= */
+
+.compass, .skateboard, .computer, .arrow {
+	background: image-url("icons.png") no-repeat;
+}
+
+.compass, .skateboard, .computer {
+	width: 78px;
+	height: 76px;
+	margin: 0 auto;
+}
+
+.compass {
+	background-position: 0 0;
+}
+
+.skateboard {
+	background-position: -79px 0;
+}
+
+.computer {
+	background-position: -158px 0;
+}
+
+.arrow {
+	background-position: -5px -81px;
+	position: absolute;
+    width: 100px;
+    height: 22px;
+    top: 20px;
+    left: 285px;
+}
+
+
+/* Home
+======================= */
+
+.hero {
+	position: relative;
+	top: -3px;
+	margin-bottom: -3px;
+	background: image-url("bg.jpg") #383939;
+	background-size: cover;
+	min-height: 100%;
+	text-align: center;
+	z-index: 10;
+	h2, p {
+		color: #fff;
+	}
+	h2 {
+		padding-top: 285px;
+		font-size: 4em;
+		font-weight: 700;
+	}
+	p {
+		margin-top: -10px;
+		font-size: 1.6em;
+		font-family: $primary-font, sans-serif !important;
+	}
+	.learnMore {
+		background-color: #fff;
+		border-radius: 3px;
+		padding: 20px 0 0 0;
+		max-width: 550px;
+		margin: 0 auto;
+		span {
+			color: #424242;
+			font-size: 1.2em;
+			margin-right: 20px;
+		}
+		button {
+			padding: 20px 50px !important;
+		}
+	}
+	.pin {
+		position: absolute;
+		bottom: 20px;
+		left: 47.5%;
+		font-size: 0.9em;
+		font-style: italic;
+		font-weight: 300;
+		color: #fff;
+		text-align: center;
+		animation-duration: 3s;
+		i {
+			display: block;
+			margin-top: 5px;
+		}
+	}
+}
+
+/* Learn
+======================= */
+
+.learn {
+	padding: 40px 0;
+	text-align: center;
+	.row {
+		margin: 60px auto;
+		h3 {
+			margin-top: 15px;
+			font-weight: 700;
+		}
+		p {
+			color: #5e5e5e;
+			font-weight: 300;
+			font-size: 0.9em;
+		}
+	}
+}
+
+.pageDivider {
+	position: relative;
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: -80px;
+    z-index: 10;
+    &.white {
+    	border-top: 40px solid #fff;
+    }
+    &.grey {
+    	border-top: 40px solid #f9f9f9;
+    }
+}
+
+.more {
+	display: block;
+	font-style: italic;
+	font-size: 1.2em;
+	font-weight: 300;
+	text-align: center;
+}
+
+/* Spots
+======================= */
+
+.spots {
+	background-color: #f9f9f9;
+	padding: 40px 0;
+	h2 {
+		margin-top: 40px;
+		text-align: center;
+	}
+	.spotRow {
+		margin: 40px auto !important;
+	}
+	.spotBox {
+		background-color: #fff;
+		border: 1px solid rgba(0,0,0,.15);
+		border-radius: 3px;
+		margin-bottom: 30px;
+		img {
+			border-top-left-radius: 3px;
+			border-top-right-radius: 3px;
+		}
+		.info {
+			h4 {
+				padding: 10px 20px 0 20px;
+				font-size: 1.2em;
+				font-weight: 700;
+				margin-bottom: 0;
+			}
+			span {
+				display: block;
+				padding: 5px 20px 10px 20px;
+				font-size: 0.85em;
+				font-weight: 300;
+				color: #515151;
+				i {
+					margin-right: 3px;
+				}
+			}
+			.extra {
+				border-top: 1px solid rgba(0,0,0,.05) !important;
+				background-color: rgba(0,0,0,.02);
+				font-size: 1em;
+				font-weight: 300;
+				padding: 10px 20px;
+				text-align: center;
+			}
+		}
+	}
+}
+
+/* Start
+======================= */
+
+.start {
+	padding: 80px 0 50px 0;
+	text-align: center;
+	h2, button {
+		display: inline-block;
+	}
+	h2 {
+		vertical-align: middle;
+		margin-right: 80px;
+	}
+	&.grey {
+		background-color: #f9f9f9;
+	}
+}
+
+/* Profile
+======================= */
+
+.profileHeading {
+	padding: 20px 0 40px 0;
+	h2, p {
+		text-align: center;
+	}
+	p {
+		font-weight: 300;
+	}
+}
+
+.profile {
+	padding: 80px 0 40px 0;
+	background-color: #f9f9f9;
+	.form {
+		padding: 20px;
+		background-color: #fff;
+		margin-bottom: 20px;
+		h3 {
+			padding-left: 14px
+		}
+		.number {
+			display: inline-block;
+			position: relative;
+			top: -5px;
+			background-color: $grey;
+			border-radius: 50%;
+			color: #fff;
+			margin-right: 5px;
+			padding: 4px 10px;
+    		font-size: 0.6em;
+    		font-weight: 700;
+		}
+	}
+	.fieldBox {
+		margin: 10px 0;
+		.panel {
+			border-radius: 3px;
+			padding-top: 10px;
+			padding-bottom: 0px;
+			label {
+				margin-bottom: 8px;
+			}
+		}
+	}
+	.field {
+		label {
+			margin-bottom: 5px;
+		}
+		input, select, textarea {
+			border-radius: 3px;
+		}
+		small {
+			display: block;
+    		margin-top: -10px;
+		}
+	}
+}
+
+/* Login
+======================= */
+
+.login {
+	.form {
+		max-width: 500px !important;
+	}
+	button {
+		display: block;
+		min-width: 150px;
+	}
+}
+
+/* Footer
+======================= */
+
+footer {
+	position: relative;
+	background-color: #383939;
+	padding: 60px 0;
+	color: #a7a9a9;
+	font-weight: 300;
+	z-index: 20;
+	.title {
+		display: inline-block;
+		font-size: 2em;
+		font-weight: 900;
+		color: #fff;
+		padding-bottom: 15px;
+	}
+	p {
+		font-weight: 300;
+	}
+	span {
+		margin-left: 10px;
+		i {
+			margin-left: 3px;
+		}
+	}
+	ul {
+		list-style: none;
+		margin-left: 0;
+		a {
+			color: #efefef;
+			&:hover {
+				color: #dbdbdb;
+			}
+			&:not(:first-child) li {
+				margin: 5px 0;
+			}
+			&:first-child li {
+				margin-bottom: 5px;
+			}
+		}
+	}
+}

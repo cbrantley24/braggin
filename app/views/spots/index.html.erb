@@ -1,0 +1,63 @@
+<section class="spots">
+    <div class="filter">
+        <div class="item">
+            <h4>Distance</h4>
+            <h3 ng-init="distance = 25">~{{distance}}mi</h3>
+            <input type="range" name="distance" min="0" max="50" step="5" ng-model="distance">
+        </div>
+        <div class="item">
+            <h4>Competitors</h4>
+            <h3 ng-init="competitors = 10">> {{competitors}}</h3>
+            <input type="range" name="competitors" min="0" max="50" ng-model="competitors">
+        </div>
+        <div class="item list">
+            <h4>Type</h4>
+            <ul>
+                <a href="#" class="active"><li>All Types</li></a>
+                <a href="#"><li>Featured</li></a>
+                <a href="#"><li>User</li></a>
+            </ul>
+        </div>
+        <div class="item list">
+            <h4>Location</h4>
+            <ul>
+                <a href="#" class="active"><li>All Locations</li></a>
+                <a href="#"><li>Rural</li></a>
+                <a href="#"><li>Urban</li></a>
+            </ul>
+        </div>
+        <div class="item list">
+            <h4>Spot</h4>
+            <ul>
+                <a href="#" class="active"><li>All Spots</li></a>
+                <a href="#"><li>Outdoors</li></a>
+                <a href="#"><li>Indoors</li></a>
+            </ul>
+        </div>
+    </div>
+    <div class="row spotHeading">
+        <h3 ng-show="distance == 0 && competitors == 0">All spots in Los Angeles</h3>
+        <h3 ng-show="distance > 0 || competitors > 0"><%= @spots.count %> spot<span ng-show="<%= @spots.count %> > 1">s</span> in Los Angeles <span ng-show="distance > 0">within {{distance}} miles</span> <span ng-show="distance > 0 && competitors > 0">and</span> <span ng-show="competitors > 0">with more than {{competitors}} competitors</span></h3>
+    </div>
+    <div class="row spotsPage">
+        <% @spots.each do |spot| %>
+        <div class="large-3 columns end">
+            <%= link_to(spot) do %>
+            <div class="spotBox">
+                <%= image_tag spot.img %>
+                <div class="info">
+                    <h4><%= spot.name %></h4>
+                    <span><%= spot.location %> <i>&bull;</i> <b>2.1</b> miles away</span>
+                    <div class="extra">
+                        <b>89</b> Competitors
+                    </div>
+                </div>
+            </div>
+            <% end %>
+        </div>
+        <% end %>
+    </div>
+    <div class="row">
+    <%= link_to 'New Spot', new_spot_path %>
+    </div>
+</section>

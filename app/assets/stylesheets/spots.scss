@@ -1,0 +1,356 @@
+// Place all the styles related to the Spots controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.spots {
+	.spotHeading {
+		margin-top: 45px;
+		margin-bottom: 10px;
+		margin-left: 300px;
+		h3 {
+			font-size: 1.2em;
+			color: #515151;
+			font-weight: 300;
+			padding-left: 15px;
+		}
+	}
+	.filter {
+		position: fixed;
+		overflow: scroll;
+		top: 70px;
+		float: left;
+		height: 100%;
+		width: 250px;
+		background-color: #f4f4f4;
+		border-right: 1px solid rgba(0,0,0,.15);
+		z-index: 30;
+		padding: 22px 0;
+		.item {
+			padding: 20px 25px;
+			text-align: center;
+			h4 {
+				text-transform: uppercase;
+				font-size: 0.8em;
+				color: #515151;
+				font-weight: 300;
+				margin-bottom: 0;
+			}
+			h3 {
+				font-size: 2em;
+				font-weight: 700;
+			}
+			input {
+				-webkit-appearance: none;
+				width: 160px;
+				height: 7px;
+				background: linear-gradient(to right, #c0e1d6 0%, #abd8c9 100%);
+				background-size: 150px 10px;
+				background-position: center;
+				background-repeat: no-repeat;
+				overflow: hidden;
+				outline: none;
+				zoom: 130%;
+				display: block;
+				margin: auto !important;
+				margin-bottom: 30px;
+			}
+			input::-webkit-slider-thumb {
+				-webkit-appearance: none;
+				width: 20px;
+				height: 20px;
+				background: #65b79c;
+				position: relative;
+				z-index: 3;
+			}
+			input::-webkit-slider-thumb:after {
+				content: " ";
+				width: 160px;
+				height: 20px;
+				position: absolute;
+				z-index: 1;
+				right: 20px;
+				top: 0px;
+				background: #65b79c;
+			}
+			&.list {
+				padding: 5px 25px;
+				text-align: left;
+				ul {
+					list-style: none;
+					margin-top: 5px;
+					margin-left: 0;
+					a {
+						color: #848484;
+						font-size: 0.9em;
+						font-weight: 300;
+						&.active {
+							color: #65b79c;
+						}
+						&:hover {
+							font-weight: 400;
+						}
+					}
+				}
+			}
+		}
+	}
+	.spotsPage {
+		margin-left: 300px;
+		max-width: 82.5rem;
+		.large-3 {
+			width: 329px;
+			img {
+				width: 297px;
+				height: 191px;
+			}
+		}
+	}
+}
+
+.head {
+		min-height: 77%;
+	}
+
+.spot {
+	
+	.main {
+		border-bottom: 1px solid #dce0e0;
+		.info, .competitorBox {
+			display: inline-block;
+		}
+		.info {
+			padding-top: 20px;
+			h3 {
+				font-weight: 700;
+				font-size: 2.2em;
+				color: #565a5c;
+			}
+			p {
+				font-weight: 300;
+				font-size: 1em;
+				color: #82888a;
+			}
+		}
+		.competitorBox {
+			position: relative;
+			bottom: -1px;
+			margin-top: -45px;
+			width: 300px;
+			float: right;
+			.num {
+				background-color: rgba(60,63,64,0.9);
+				padding: 10px 20px;
+				color: #fff;
+				span {
+					float: right;
+				}
+			}
+			.join {
+				padding: 40px 20px;
+				border: 1px solid #dce0e0;
+				&.keep {
+					position: fixed;
+					top: 80px;
+					width: 300px;
+					background-color: #fff;
+				}
+				&.stay {
+					position: absolute !important;
+				}
+			}
+			button {
+				width: 100%;
+				margin-bottom: 0;
+			}
+		}
+	}
+	.content {
+		background-color: #f9f9f9;
+		padding: 20px 0;
+		> .row > .large-8 {
+			padding-left: 0;
+			width: 70%;
+		}
+		> .row > .large-12 {
+			padding-left: 0;
+		}
+		article:not(.about) {
+			border-top: 1px solid #dce0e0;
+			padding-top: 15px;
+			h3 {
+				color: #82888a;
+				font-weight: 300;
+				font-size: 1.2em;
+				margin-bottom: 20px;
+			}
+		}
+		.about {
+			h3 {
+				color: #565a5c;
+				font-weight: 700;
+				margin-bottom: 25px;
+			}
+			p {
+				color: #565a5c;
+				font-weight: 300;
+			}
+		}
+		.king {
+			.kingBox {
+				img {
+					max-width: 330px;
+				}
+				.posTag {
+					color: #fff;
+					padding: 7px 15px;
+					background-color: #d9bd44;
+					position: absolute;
+					top: 7px;
+    				left: 22px;
+					font-size: 1.4em;
+					font-family: 'Arial', sans-serif !important;
+					-webkit-box-shadow: 10px 10px 38px -15px rgba(0,0,0,0.7);
+					-moz-box-shadow: 10px 10px 38px -15px rgba(0,0,0,0.7);
+					box-shadow: 10px 10px 38px -15px rgba(0,0,0,0.7);
+				}
+				.videoTag {
+					background-color: rgba(60,63,64,0.9);
+					color:#fff;
+					padding: 0 5px;
+					position: absolute;
+					bottom: 0;
+					right: 13px;
+					font-size: 0.75em;
+					font-family: 'Arial', sans-serif !important;
+				}
+				h2 {
+					margin: 0;
+					margin-top: -7px;
+					font-size: 1.9em;
+				}
+				span, p {
+					color: #565a5c;
+					font-weight: 300;
+					strong {
+						color: #515457;
+						font-weight: 400;
+					}
+				}
+				p {
+					margin-top: 5px;
+				}
+			}
+		}
+		.competitors {
+			.competitor {
+				.video {
+					img {
+						width: 100%;
+						height: 200px;
+					}
+					// Make into videoTag -> pos, new, time
+					.featTag, .posTag, .newTag, .videoTag {
+						color:#fff;
+						padding: 0 5px;
+						position: absolute;
+						font-size: 0.75em;
+						font-family: 'Arial', sans-serif !important;
+					}
+					.newTag, .videoTag {
+						margin-top: -22px;
+					}
+					.featTag {
+						top: 7px;
+						right: 20px;
+						background-color: #e3bd49;
+					}
+					.posTag {
+						padding: 5px 9px;
+						background-color: rgba(60,63,64,1);
+						font-weight: 300;
+						-webkit-box-shadow: 10px 10px 38px -15px rgba(0,0,0,0.7);
+						-moz-box-shadow: 10px 10px 38px -15px rgba(0,0,0,0.7);
+						box-shadow: 10px 10px 38px -15px rgba(0,0,0,0.7);
+						top: 7px;
+    					left: 22px;
+						/* &.silver, &.bronze {
+							padding: 5px 5px !important;
+						}
+						&.silver {
+							i {
+								color: #b7b7b7;
+								font-size: 2.2em;
+							}
+							strong {
+								position: absolute;
+								color: #fff;
+								left: 13.6px;
+    							top: 4px;
+    							font-weight: 400;
+							}
+						} */
+						&.silver {
+							background-color: #b7b7b7;
+							padding: 5px 14px;
+    						font-size: 1.1em;
+						}
+						&.bronze {
+							background-color: #b07b30;
+							padding: 5px 11px;
+    						font-size: 0.9em;
+						}
+						/* &.bronze {
+							i {
+								color: #ca903e;
+								font-size: 2em;
+							}
+							strong {
+								position: absolute;
+								color: #fff;
+								left: 12.6px;
+    							top: 5px;
+    							font-weight: 400;
+    							font-size: 0.9em;
+							}
+						} */
+					}
+					.newTag {
+						background-color: rgba(171,216,201,0.9);
+						right: 58px;
+					}
+					.videoTag {
+						background-color: rgba(60,63,64,0.9);
+						right: 20px;
+					}
+				}
+				.info {
+					h4 {
+						margin-bottom: 0;
+					}
+					span, p {
+						color: #565a5c;
+						font-weight: 300;
+						strong {
+							color: #515457;
+							font-weight: 400;
+						}
+					}
+					p {
+						margin-top: 5px;
+					}
+				}
+			}
+		}
+		.map {
+			padding-top: 25px !important;
+			padding-bottom: 20px;
+		}
+		.similar {
+			padding-bottom: 0 !important;
+			.spotsRow {
+				margin-top: 0 !important;
+			}
+		}
+	}
+}

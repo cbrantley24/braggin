@@ -1,0 +1,71 @@
+<section class="hero">
+	<h2>It's time to start skating.</h2>
+	<p>Skate the best spots in town, compete with the world, prove your worth.</p>
+	<div class="learnMore">
+		<span>Join now and start competing</span>
+		<%= link_to('/learn/') do %><button class="button teal">Learn More</button><% end %>
+	</div>
+	<div class="pin animated pulse infinite">How It Works <i class="fa fa-angle-down fa-lg"></i></div>
+</section>
+<section class="learn">
+	<h2>How It Works</h2>
+		<div class="row">
+			<div class="large-4 columns">
+				<div class="arrow show-for-large-up"></div>
+				<div class="compass"></div>
+				<h3>Pick A Spot</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ante mauris, consectetur non imperdiet a, auctor ac orci. Praesent dignissim.</p>
+			</div>
+			<div class="large-4 columns">
+				<div class="arrow show-for-large-up"></div>
+				<div class="skateboard"></div>
+				<h3>Go Skate It</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ante mauris, consectetur non imperdiet a, auctor ac orci. Praesent dignissim.</p>
+			</div>
+			<div class="large-4 columns">
+				<div class="computer"></div>
+				<h3>Post Your Video</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ante mauris, consectetur non imperdiet a, auctor ac orci. Praesent dignissim.</p>
+			</div>
+		</div>
+		<%= link_to 'Learn More', "/learn/", :class => "more link grey" %>
+	<div class="pageDivider white"></div>
+</section>
+<section class="spots">
+	<h2>Top Spots In Los Angeles</h2>
+	<div class="row spotRow">
+		<% @spots.each do |spot| %>
+		<div class="large-4 columns">
+			<%= link_to(spot) do %>
+			<div class="spotBox">
+				<%= image_tag spot.img %>
+				<div class="info">
+					<h4><%= spot.name %></h4>
+					<span><%= spot.location %> <i>&bull;</i> <b>2.1</b> miles away</span>
+					<div class="extra">
+						<b>89</b> Competitors
+					</div>
+				</div>
+			</div>
+			<% end %>
+		</div>
+		<% end %>
+	</div>
+	<%= link_to 'Browse all spots', "/spots/los-angeles/", :class => "more link grey" %>
+	<div class="pageDivider grey"></div>
+</section>
+<section class="start">
+	<h2>Ready to get started?</h2>
+	<%= link_to('/profile/new/') do %><button class="button teal">Create Your Profile</button><% end %>
+</section>
+<script>
+	$(document).scroll(function() {
+		if($(window).scrollTop() >= 100) {
+			$("#homepage-header").css("background-color", "#383939").css("margin-top", "-3px");
+			$(".pin").addClass("fadeOut").removeClass("infinite");
+		} else {
+			$("#homepage-header").css("background-color", "transparent").css("margin-top", "0px");
+			$(".pin").removeClass("fadeOut").addClass("infinite");
+		}
+	})
+</script>

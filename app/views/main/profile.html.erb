@@ -1,0 +1,54 @@
+<section class="profileHeading">
+	<h2>Create Your Account</h2>
+	<p>By creating an account, you will be able to compete in spots, and vote on videos.</p>
+	<div class="pageDivider white"></div>
+</section>
+<section class="profile">
+	<div class="row form">
+		<h3><span class="number">1</span> Your basic information</h3>
+		<div class="large-6 columns fieldBox">
+			<div class="row">
+				<div class="large-6 columns">
+					<div class="field">
+						<label>First Name</label>
+						<input type="text">
+					</div>
+				</div>
+				<div class="large-6 columns">
+					<div class="field">
+						<label>Last Name</label>
+						<input type="text">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="large-6 columns fieldBox">
+			<div class="field">
+				<label>Create A Username</label>
+				<input type="text" ng-model="username">
+				<small>Displayed at: <b>http://braggin.com/u/{{username}}</b></small>
+			</div>
+		</div>
+		<h3><span class="number">2</span> Your account credentials</h3>
+		<div class="large-6 columns fieldBox">
+			<div class="field">
+				<label>Email Address</label>
+				<input type="email">
+			</div>
+		</div>
+		<div class="large-6 columns fieldBox">
+			<div class="field">
+				<label>Password</label>
+				<input type="text">
+			</div>
+		</div>
+		<div class="large-12 columns fieldBox">
+			<div class="panel">
+      			<input id="checkbox1" type="checkbox"><label for="checkbox1">I agree to the <u>Terms of Use</u> and <u>Privacy Policy</u></small></label>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<button class="button teal right">Continue</button>
+	</div>
+</section>
